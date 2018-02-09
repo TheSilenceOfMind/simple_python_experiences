@@ -34,12 +34,13 @@ for f in files:
     d = {}
     list_of_words = get_clean_list(get_words(f))
     total_amount_of_words = len(list_of_words)
-    set_of_words = set(list_of_words)
     cnt = 0
-    for i in set_of_words:
-        amount = list_of_words.count(i)
-        cnt += amount
-        d[i] = amount
+    for i in list_of_words:
+        cnt += 1
+        if i not in d:
+            d[i] = 1
+        else:
+            d[i] += 1
         # some online log
         print(str(cnt) + " / " + str(total_amount_of_words))
     list_of_dict.append(d)
