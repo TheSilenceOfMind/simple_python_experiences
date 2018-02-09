@@ -29,7 +29,6 @@ path_to_files_to_read = '.'
 files = get_files(path=path_to_files_to_read)
 print(files)
 
-list_of_dict = []  # used to store all dictionaries for all files
 for f in files:
     d = {}
     list_of_words = get_clean_list(get_words(f))
@@ -43,7 +42,6 @@ for f in files:
             d[i] += 1
         # some online log
         print(str(cnt) + " / " + str(total_amount_of_words))
-    list_of_dict.append(d)
 
     # write statistics to certain file
     out1 = open("output_" + f, 'w')
